@@ -5,6 +5,11 @@ Theme4Nuxt is a basic theming solution for Nuxtjs. I decided to develop it in or
 
 Based only on `tailwind.css` framework is developed to give the possibility to create your custom design without any opinionated framework.
 
+# Demo
+
+(A simple demo)[https://theme4nuxt.firebaseapp.com/]
+
+
 # Features
 
 - custom design based on CSS only
