@@ -1,6 +1,5 @@
 <template>
-    <v-theme/>
-    <!--
+    
     <div>
       
       <no-ssr><v-nav v-if="grid && grid.navigation" :items="menu" :small="grid.navigation[0].small" :large="grid.navigation[0].large" :left="grid.navigation[0].left" :bottom="grid.navigation[0].bottom" :css="grid.navigation[0].css" :button="grid.navigation[0].button"
@@ -192,13 +191,10 @@
         </template>
             
   </div>
-  -->
+  
 </template>
-
-<!--
 <script>
 import grid from '~/themes'
-import axios from 'axios'
 
 export default {
   name: 'theme4nuxt_renderer',
@@ -250,4 +246,3 @@ export default {
   }
 }
 </script>
--->

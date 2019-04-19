@@ -407,13 +407,11 @@ module.exports = {
   */
 
   borderWidths: {
-    default: '1px'//,
-    /*
+    default: '1px',
     '0': '0',
     '2': '2px',
     '4': '4px',
     '8': '8px'
-    */
   },
 
   /*
@@ -867,10 +865,10 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     //borderCollapse: [],
-    //borderColors: ['responsive', 'hover', 'focus'],
-    //borderRadius: ['responsive'],
-    //borderStyle: ['responsive'],
-    //borderWidths: ['responsive'],
+    borderColors: ['responsive', 'hover', 'focus'],
+    borderRadius: ['responsive'],
+    borderStyle: ['responsive'],
+    borderWidths: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive'],
     flexbox: ['responsive'],
