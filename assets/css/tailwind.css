@@ -28,10 +28,6 @@ a , a:focus , a:link , a:visited , button:focus , button:active  {
   @apply outline-none;
 }
 
-pre  {
-  @apply bg-grey-light rounded overflow-y-auto font-mono p-4 leading-normal text-xs;
-}  
-
 /**
  * Here you would add any of your custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities could still

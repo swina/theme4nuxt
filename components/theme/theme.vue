@@ -1,8 +1,5 @@
 <template>
-    <v-theme/>
-    <!--
     <div>
-      
       <no-ssr><v-nav v-if="grid && grid.navigation" :items="menu" :small="grid.navigation[0].small" :large="grid.navigation[0].large" :left="grid.navigation[0].left" :bottom="grid.navigation[0].bottom" :css="grid.navigation[0].css" :button="grid.navigation[0].button"
         :link="grid.navigation[0].line" :transition="grid.navigation[0].transition" />
       </no-ssr>
@@ -190,15 +187,12 @@
         <template v-if="grid.extra && grid.homepage === $route.path">
           <span v-html="grid.extra.html"></span>
         </template>
-            
-  </div>
-  -->
+    </div>        
 </template>
 
-<!--
 <script>
 import grid from '~/themes'
-import axios from 'axios'
+//import axios from 'axios'
 
 export default {
   name: 'theme4nuxt_renderer',
@@ -250,4 +244,3 @@ export default {
   }
 }
 </script>
--->

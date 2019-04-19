@@ -1,4 +1,14 @@
 import pkg from './package'
+/*import PurgecssPlugin from 'purgecss-webpack-plugin'
+import glob from 'glob-all'
+import path from 'path'
+*/
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-z0-9-:\/]+/g) || [];
+  }
+}
+
 
 export default {
   mode: 'universal',
@@ -17,11 +27,12 @@ export default {
 
   loading: { color: '#000' },
 
+    
   css: [
     '~/assets/css/tailwind.css',
     '~/assets/css/theme.css'
   ],
-
+  
   plugins: [
     { src: '~/plugins/theme4nuxt.js' , ssr: true },
     { src: '~/components/theme' , ssr: false }
@@ -30,9 +41,17 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    //'nuxt-purgecss'
   ],
   build: {
+    //extractCSS: true,
+    //postcss: {
+    //  plugins: {
+    //    tailwindcss: path.resolve('./tailwind.js')
+    //  },
+    //  preset: { autoprefixer: { grid: true } }
+    //},
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
@@ -42,13 +61,10 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-      } else {
-        postcss: {
-          // preset name
-          order: 'cssnanoLast'
-         
-        }
       }
+     
     }
-  }
+  },
+
+
 }

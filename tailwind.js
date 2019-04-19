@@ -62,7 +62,7 @@ const colors = {
   'red-light': '#ef5753',
   'red-lighter': '#f9acaa',
   'red-lightest': '#fcebea',
-
+  /*
   'orange-darkest': '#462a16',
   'orange-darker': '#613b1f',
   'orange-dark': '#de751f',
@@ -94,7 +94,7 @@ const colors = {
   'teal-light': '#64d5ca',
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
-
+  */
   'blue-darkest': '#12283a',
   'blue-darker': '#1c3d5a',
   'blue-dark': '#2779bd',
@@ -102,7 +102,7 @@ const colors = {
   'blue-light': '#6cb2eb',
   'blue-lighter': '#bcdefa',
   'blue-lightest': '#eff8ff',
-
+  /*
   'indigo-darkest': '#191e38',
   'indigo-darker': '#2f365f',
   'indigo-dark': '#5661b3',
@@ -126,7 +126,7 @@ const colors = {
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
-
+  */
   'marine-light': '#00b3f8'
 }
 
@@ -250,12 +250,13 @@ module.exports = {
     xs: '.75rem', // 12px
     sm: '.875rem', // 14px
     base: '1rem', // 16px
-    lg: '1.125rem', // 18px
+    /*lg: '1.125rem', // 18px
     xl: '1.25rem', // 20px
     '2xl': '1.5rem', // 24px
     '3xl': '1.875rem', // 30px
     '4xl': '2.25rem', // 36px
     '5xl': '3rem' // 48px
+    */
   },
 
   /*
@@ -273,15 +274,15 @@ module.exports = {
   */
 
   fontWeights: {
-    hairline: 100,
-    thin: 200,
+    //hairline: 100,
+    //thin: 200,
     light: 300,
     normal: 400,
     medium: 500,
     semibold: 600,
     bold: 700,
-    extrabold: 800,
-    black: 900
+    //extrabold: 800,
+    //black: 900
   },
 
   /*
@@ -334,8 +335,20 @@ module.exports = {
   |
   */
 
-  textColors: colors,
-
+  //textColors: colors,
+  textColors :{
+      'black': colors['black'],
+      'grey' : colors['grey'],
+      'grey-darker': colors['grey-darker'],
+      'grey-dark': colors['grey-dark'],
+      'grey-light': colors['grey-light'],
+      'grey-lighter': colors['grey-lighter'],
+      'red-dark': colors['red-dark'],
+      'red': colors['red'],
+      'blue-dark': colors['blue-dark'],
+      'blue': colors['blue'],
+      'white' : colors['white']
+  },
   /*
   |-----------------------------------------------------------------------------
   | Background colors             https://tailwindcss.com/docs/background-color
@@ -349,8 +362,18 @@ module.exports = {
   |
   */
 
-  backgroundColors: colors,
-
+  //backgroundColors: colors,
+  backgroundColors :{
+      'black': colors['black'],
+      'grey-darker': colors['grey-darker'],
+      'grey-dark': colors['grey-dark'],
+      'red-dark': colors['red-dark'],
+      'red': colors['red'],
+      'blue-dark': colors['blue-dark'],
+      'blue': colors['blue'],
+      'white' : colors['white']
+    
+  },
   /*
   |-----------------------------------------------------------------------------
   | Background sizes               https://tailwindcss.com/docs/background-size
@@ -384,11 +407,13 @@ module.exports = {
   */
 
   borderWidths: {
-    default: '1px',
+    default: '1px'//,
+    /*
     '0': '0',
     '2': '2px',
     '4': '4px',
     '8': '8px'
+    */
   },
 
   /*
@@ -457,6 +482,7 @@ module.exports = {
   width: {
     auto: 'auto',
     px: '1px',
+    /*
     '1': '0.25rem',
     '2': '0.5rem',
     '3': '0.75rem',
@@ -471,6 +497,7 @@ module.exports = {
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
+    */
     '1/2': '50%',
     '1/3': '33.33333%',
     '2/3': '66.66667%',
@@ -839,11 +866,11 @@ module.exports = {
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
-    borderCollapse: [],
-    borderColors: ['responsive', 'hover', 'focus'],
-    borderRadius: ['responsive'],
-    borderStyle: ['responsive'],
-    borderWidths: ['responsive'],
+    //borderCollapse: [],
+    //borderColors: ['responsive', 'hover', 'focus'],
+    //borderRadius: ['responsive'],
+    //borderStyle: ['responsive'],
+    //borderWidths: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive'],
     flexbox: ['responsive'],
@@ -854,8 +881,8 @@ module.exports = {
     leading: ['responsive'],
     lists: ['responsive'],
     margin: ['responsive'],
-    maxHeight: ['responsive'],
-    maxWidth: ['responsive'],
+    //maxHeight: ['responsive'],
+    //maxWidth: ['responsive'],
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
@@ -863,12 +890,12 @@ module.exports = {
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],
-    pointerEvents: ['responsive'],
+    //pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
     shadows: ['responsive', 'hover', 'focus'],
-    svgFill: [],
-    svgStroke: [],
+    //svgFill: [],
+    //svgStroke: [],
     textAlign: ['responsive'],
     textColors: ['responsive', 'hover', 'focus'],
     textSizes: ['responsive'],
