@@ -73,7 +73,7 @@ const layout = {
         bottom      : false,
         transition  : 'slidedown',
         orientation : 'horizontal' , 
-        items       :  [ { name : 'Home' , path: '/' } , { name: 'Blog' , path: '/blog' } , { name: 'About' , path: '/about' } , { name: 'How to' , path: '/howto' } , { name: 'Store' , path: '/store' } ] 
+        items       :  [ { name : 'Home' , path: '/' } , { name: 'Blog' , path: '/blog' } , { name: 'About' , path: '/about' } , { name: 'How to' , path: '/howto' } , { name: 'Store' , path: '/store' } , { name: 'GitHub', path: 'https://github.com/swina/theme4nuxt'}  ] 
     }],
     template: {
         main : {

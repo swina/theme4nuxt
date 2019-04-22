@@ -31,7 +31,10 @@
                       <div class="relative submenu" :key="'menu_' + m" v-if="item.path!='/'">
                         <nuxt-link :to="item.path"
                           @click.native="hamburger=false"
-                          :class="grid.navigation[0].link">{{item.name}}</nuxt-link>
+                          :class="grid.navigation[0].link" v-if="nuxtLink(item.path)">{{item.name}}</nuxt-link>
+                        <a :href="item.path" v-if="!nuxtLink(item.path)" :class="grid.navigation[0].link" target="_blank">
+                          {{item.name}}
+                        </a>  
                       </div>
                       
                     </template>
@@ -245,6 +248,14 @@ export default {
   async beforeMount() {
     this.initData = this.$store.state.initData
   },
+  methods:{
+    nuxtLink (url) {
+        if (url.match(/^(http(s)?|ftp):\/\//)) {
+          return false
+        }
+        return true
+      }
+  },
   mounted() {
     //this.grid = this.$store.state.theme
     let m = [{ path:'/' , name: 'Home' }]
@@ -258,11 +269,14 @@ export default {
         m.push(obj)
       }
     })
+    
     let themes = []
     for ( var t=0 ; t < this.$store.state.themes.length ; t++ ){
       themes.push({name:this.$store.state.themes[t].name , path: this.$store.state.themes[t].homepage } )
     }
     this.menu = m
+    this.menu = this.$store.state.theme.navigation[0].items
+    console.log ( this.menu )
     this.themes = themes
   }
 }
