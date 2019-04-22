@@ -32,7 +32,7 @@ const layout = {
                 root: 'w-full flex flex-wrap mb-12',
                 blocks : [
                     {
-                        css: 'w-full h-12 flex items-center pl-4 text-grey col-nav' ,
+                        css: 'w-full h-12 flex items-center pl-4 text-grey mobile' ,
                         elements : [
                             { type: 'menu'      , navigation: 0, homepage: false}
                         ] 
@@ -58,7 +58,7 @@ const layout = {
                     {
                         css: 'w-full',
                         elements: [
-                            { type: 'css'       , content: 'bg-header-5 h-screen clipped-zig-zag -mt-24 z-back' , homepage: true }
+                            { type: 'css'       , content: 'bg-header-5 h-screen clipped-zig-zag -mt-24 z-back' , homepage: false }
                         ]
                     },
                     {

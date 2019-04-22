@@ -39,7 +39,7 @@ const layout = {
                         ]
                     },
                     {
-                        css: 'w-full md:w-3/4 lg:w-3/4 xl:w-3/4 h-24 col z-30 bg-white justify-end items-center flex text-right pr-24 col-nav border-b border-red' , 
+                        css: 'w-full md:w-3/4 lg:w-3/4 xl:w-3/4 h-24 col z-30 bg-white justify-end items-center flex text-right pr-24 col-nav border-b border-red mobile' , 
                         elements : [
                             { type: 'menu'      , navigation: 0, homepage: false}
                         ]

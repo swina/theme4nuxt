@@ -94,7 +94,7 @@ const layout = {
                         homepage: false
                     },
                     {
-                        css: 'w-full md:w-3/4 lg:w-3/4 xl:w-3/4 h-24 z-30 justify-left items-center flex pr-12 bg-blue' , 
+                        css: 'w-full md:w-3/4 lg:w-3/4 xl:w-3/4 h-24 z-30 justify-left items-center flex pr-12 bg-blue mobile' , 
                         elements : [
                             { type: 'menu'      , navigation: 0, homepage: false}
                         ]
@@ -102,7 +102,7 @@ const layout = {
                     {
                         css: 'w-full flex items-center justify-center h-64 bg-blue',
                         elements: [
-                            { type: 'html'       , content: '<div class="p-4 z-30 opacity-75 rounded-lg text-white"><h4>Do you need a theme solution for Nuxt?</h4><h1><span class="font-light">Theme<span class="text-black">4</span></span>Nuxt</h1><button class="my-4 py-2 px-4 bg-grey-light rounded shadow-lg hover:bg-indigo hover:text-white">Get Started</button></div>' , action: '/howto' }
+                            { type: 'html'       , content: '<div class="p-4 z-30 opacity-75 rounded-lg text-white"><h4>Do you need a free theme solution for Nuxt?</h4><h1><span class="font-light">Theme<span class="text-black">4</span></span>Nuxt</h1><button class="my-4 py-2 px-4 bg-grey-light rounded shadow-lg hover:bg-indigo hover:text-white">Get Started</button></div>' , action: '/howto' }
                         ],
                         homepage: true
                     },
@@ -177,7 +177,7 @@ const layout = {
                                 options: { 
                                     data    : 'prices' ,
                                     style   : "px-8 scale-1",
-                                    title   : '<h1 class="font-light text-2xl">Pricing</h1>' ,
+                                    title   : '<h1 class="font-light text-2xl">Pricing Table Component Demo</h1>' ,
                                     css     : 'rounded-t border h-64 bg-white hover:shadow-lg text-center text-grey-darkest p-4 pb-8',
                                     action  : 'bg-white border-l border-r border-b rounded-b flex items-center justify-center',
                                     button  : 'btn bg-green-light hover:bg-green text-white rounded m-2',

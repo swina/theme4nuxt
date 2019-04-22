@@ -17,7 +17,10 @@ export default {
 
   loading: { color: '#000' },
 
-  
+  icon: [
+    '~/assets/logo.png'
+  ],
+
   css: [
     '~/assets/css/tailwind.css',
     '~/assets/css/theme.css'

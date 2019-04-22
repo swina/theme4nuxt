@@ -41,7 +41,7 @@ const layout = {
                         homepage: false
                     },
                     {
-                        css: 'w-full h-24  justify-center flex items-center col bg-white font-serif border-b mb-4' ,
+                        css: 'w-full h-24  justify-center flex items-center col bg-white font-serif border-b mb-4 mobile' ,
                         elements : [
                             { type: 'menu'      , navigation: 0, homepage: false}
                         ]

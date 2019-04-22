@@ -43,7 +43,7 @@ const layout = {
                         homepage: false
                     },
                     {
-                        css: 'w-full md:w-3/4 lg:w-3/4 xl:w-3/4 h-24 col z-30 justify-left items-center flex text-right pr-12 col-nav  bg-purple-dark' , 
+                        css: 'w-full md:w-3/4 lg:w-3/4 xl:w-3/4 h-24 col z-30 justify-left items-center flex text-right pr-12 col-nav  bg-purple-dark mobile' , 
                         elements : [
                             { type: 'menu'      , navigation: 0, homepage: false}
                         ]
