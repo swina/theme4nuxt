@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <component :is="loadcomponent" :options="options"/>
-    </div>
+    <component :is="loadcomponent" :options="options"/>
 </template>
 
 <script>
@@ -13,7 +11,7 @@ export default {
     computed:{
          loadcomponent(){
             let chunk = this.name
-            return () =>  import(/* webpackChunkName: 'theme4nuxt' */ '~/components/' + this.name)
+            return () =>  import(/* webpackChunkName: 'theme4nuxt_' */ '~/components/' + this.name)
         },
     }
 }

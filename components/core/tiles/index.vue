@@ -17,15 +17,20 @@
 
 <script>
 export default {
+  name: 'posts_tiles',
+  
   props :{
-    options: { type: Object , required: true , default:()=>{}},
-    //items: { type: Array, required: false , default:()=>[]}
+    options: { type: Object , required: false , default:()=> { items: [] } },
   },
   computed:{
       items(){
+          if ( !this.options.items ){
+            return this.$store.state.initData.posts
+          }
           return this.options.items
       }
   },
+  
   methods: {
         linkProperties (url) {
         if (url.match(/^(http(s)?|ftp):\/\//)) {

@@ -410,7 +410,8 @@ To load a custom component we have to define as element the following data:
 Theme4Nuxt loads components dynamically using a component wrapper. 
 
 Theme4Nuxt component wrapper (components/theme/ComponentWrapper.vue)
-```
+
+```html
 <template>
     <div>
         <component :is="loadcomponent" :options="options"/>
@@ -441,27 +442,17 @@ In order to work properly you need to update your nuxt.config.js with the follow
 
 file: ./nuxt.config.js
 
-```
-/*
-** Load tailwind.css
-*/
+```js
 css: [
     '~/assets/css/tailwind.css' //if you set a nuxt project with tailwind framework you should have this
 ],
 
-/*
-** Plugins to load before mounting the App
-*/
 plugins: [
     '~/plugins/index.js',
     '~/components/theme' //load all theme required components
 ],
 
-/*
-** Nuxt.js modules
-*/
 modules: [
-    //axios, pwa and markdown support
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit'  //used to integrate markdown files

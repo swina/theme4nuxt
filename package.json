@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "build:css": "postcss ./assets/css/tailwind.css -o ./static/tailwind.css",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
@@ -17,7 +18,8 @@
     "@nuxtjs/markdownit": "^1.2.4",
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0"
+    "nuxt": "^2.4.0",
+    "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.1.0",

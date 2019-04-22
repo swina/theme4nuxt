@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full">
+  <div class="w-full flex flex-wrap">
     <slot name="title"/>
-    <div v-for="(item,index) in items" :key="index" class="text-left p-2">
+    <div v-for="(item,index) in items" :key="index" class="w-full text-left p-2">
       <h4 class="font-light">{{item.name}}</h4>
       <div class="w-full rounded h-4 bg-grey-light">
-        <div class="rounded h-4 bg-blue" :style="style(item.value)"></div>
+        <div :class="'rounded h-4 ' + color" :style="style(item.value)"></div>
       </div>
       <small>{{item.value}}</small>
     </div>
@@ -14,14 +14,31 @@
 <script>
 export default {
   props: {
-    items: { type: Array , required: false , default:()=>[]},
-    color: { type: String , required:false , default:'green-light'}
+    options: {
+      type: Object,
+      required: false,
+      default:()=>({
+        
+      })
+    }
+  },
+  computed:{
+    items(){
+      return this.$store.state.initData[this.options.data]
+    },
+    color(){
+      if ( this.options.color ){
+        return this.options.color
+      }
+      return 'green-light'
+    }
   },
   methods:{
     style(perc){
       return {
         "width" : perc,
-        "transition" : "width 0s ease 0s"
+        "transition" : "width 0s ease 0s",
+        "transform:" : "scaleX(1)"
       }
     }
   }

@@ -8,6 +8,8 @@ class TailwindExtractor {
     return content.match(/[A-z0-9-:\/]+/g) || [];
   }
 }
+
+
 export default {
   mode: 'universal',
   head: {
@@ -28,7 +30,7 @@ export default {
   
   css: [
     '~/assets/css/tailwind.css',
-    //'~/assets/css/theme.css'
+    '~/assets/css/theme.css'
   ],  
   
   
@@ -52,6 +54,7 @@ export default {
       },
       preset: { autoprefixer: {} }
     },
+    
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
@@ -62,6 +65,7 @@ export default {
           exclude: /(node_modules)/
         })
       }
+      
       if (!ctx.isDev){
         new PurgecssPlugin({
           
@@ -79,11 +83,13 @@ export default {
   
               // Specify the file extensions to include when scanning for
               // class names.
-              extensions: ["html", "js", "css" , "vue"]
+              extensions: ["html", "js", "vue"]
             }
-          ]
+          ],
+          whitelist: ['html', 'body']
         })
       }
+      
     }
   },
 

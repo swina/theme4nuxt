@@ -6,7 +6,9 @@
         </div>
         <template  v-for="(card,index) in lista">
             <div class="w-full md:w-1/3 lg:w-1/3 xl:w-1/4 px-6 rounded mb-4 overflow-hidden" :key="'card_' + index">
-                <div :class="'rounded-t-lg w-full shadow-lg ' + height" :style="bg(index)"></div>
+                <div :class="'rounded-t-lg object-cover w-full shadow-lg ' + height" v-lazy:background="card">
+                    <!--<img v-lazy="card"/>-->
+                </div>
                 <div class="px-6 py-4 border">
                     <div class="font-bold text-xl mb-2">
                         <span v-if="options.contest==='info'">{{titles[index]}}</span>
@@ -19,6 +21,9 @@
                 <div class="flex items-center justify-center py-4 border-b border-r border-l rounded-b-lg bg-grey-light">
                     <!--<nuxt-link :to="'/theme/' + (index+1)" v-if="contest=='info' && index > 0"><button class="bg-blue-light inline-block rounded-full px-3 py-1 text-sm text-white hover:bg-blue-dark mr-2">Preview</button></nuxt-link>
                     -->
+                    <button v-if="options.contest==='info'" @click="$store.dispatch('SetCurrentTheme',index)" class="bg-blue-light inline-block rounded-full px-3 py-1 text-sm text-white hover:bg-blue-dark mr-2">Preview</button>
+                    
+
                     <button v-if="options.contest==='products'" class="bg-blue-light inline-block rounded-full px-3 py-1 text-sm text-white hover:bg-blue-dark mr-2">More</button>
                     
                     <!--<button v-if="contest==='info' && index === 0" class="bg-blue-light inline-block rounded-full px-3 py-1 text-sm text-white hover:bg-blue-dark mr-2">Current</button>-->
@@ -92,7 +97,7 @@ export default {
         bg(i){
             
             return {
-                "background-image"  : "url(" +this.lista[i] + ")",
+                //"background-image"  : "url(" +this.lista[i] + ")",
                 "background-size"   : this.options.contest === 'products' ? "cover" : "cover",
                 "background-position" : "top center" ,
                 "background-repeat" : "no-repeat"

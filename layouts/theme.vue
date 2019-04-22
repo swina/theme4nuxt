@@ -28,12 +28,14 @@
                     </span>
 
                     <template v-for="(item,m) in grid.navigation[element.navigation].items">
-                      <span :key="'menu_' + m" v-if="item.path!='/'">
+                      <div class="relative submenu" :key="'menu_' + m" v-if="item.path!='/'">
                         <nuxt-link :to="item.path"
                           @click.native="hamburger=false"
                           :class="grid.navigation[0].link">{{item.name}}</nuxt-link>
-                      </span>
+                      </div>
+                      
                     </template>
+                    
                   </div>
 
                   <div :key="'element_' + n" v-if="element.type=='html'  && !element.action" v-html="element.content" />
@@ -165,6 +167,7 @@
                           </nuxt-link>
                         </span>
                       </template>
+
                     </div>
 
                     <div :key="'footer_element_' + el" v-if="element.type=='html'  && !element.action" v-html="element.content"/>
@@ -186,32 +189,39 @@
           
         </main>
       
-        <template v-if="grid.extra && grid.homepage === $route.path">
+        <!--<template v-if="grid.extra && grid.homepage === $route.path">
           <span v-html="grid.extra.html"></span>
-        </template>
-            
+        </template>-->
+        <div class="fixed pin-b pin-r">
+          <select v-model="theme" class="p-2 bg-blue rounded text-white text-sm">
+            <template v-for="(t,index) in themes">
+              <option :value="index" :key="'theme_' + index">{{t.name}}</option>
+            </template>
+          </select>
+        </div>    
   </div>
   
 </template>
 <script>
-import grid from '~/themes'
+//import grid from '~/themes/theme1.js'
 
 export default {
   name: 'theme4nuxt_renderer',
   data: () => ({
-    theme: null,
+    theme: 0, 
+    themes:null,
     menu: null,
     initData:null,
-    comp:''
+    comp:'',
+    submenu: ['Link 1' , 'Link 2' , 'Link 3' ]
   }),
   computed: {
-   
     grid: {
       get: function() {
-        return grid
+        return this.$store.state.themes[this.$store.state.currentTheme]
       },
       set: function() {
-        return grid
+        return this.$store.state.themes[this.$store.state.currentTheme]
       }
     },
     home() {
@@ -227,12 +237,18 @@ export default {
       return ''
     }
   },
+  watch:{
+    theme(val){
+      this.$store.dispatch('SetCurrentTheme',val)
+    }
+  },
   async beforeMount() {
     this.initData = this.$store.state.initData
   },
   mounted() {
     //this.grid = this.$store.state.theme
     let m = [{ path:'/' , name: 'Home' }]
+    //this.theme = this.$store.state.currentTheme
     this.$router.options.routes.map(menu => {
       if (menu.path.split('/').length < 3 && menu.path != '/') {
         let obj = {
@@ -242,7 +258,12 @@ export default {
         m.push(obj)
       }
     })
+    let themes = []
+    for ( var t=0 ; t < this.$store.state.themes.length ; t++ ){
+      themes.push({name:this.$store.state.themes[t].name , path: this.$store.state.themes[t].homepage } )
+    }
     this.menu = m
+    this.themes = themes
   }
 }
 </script>

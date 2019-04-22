@@ -34,7 +34,9 @@
                                 @click.native="hamburger=false" 
                                 :class="'items-center flex w-full no-underline h-10 pl-2 ' + link">{{item.name}}</nuxt-link>
                         </div>
+                       
                     </template>
+
                 </div>
             </transition>
         </div>
@@ -44,7 +46,8 @@
 <script>
 export default {
     data:()=>({
-        hamburger: false
+        hamburger: false,
+        
     }),
     computed:{
         custom(){

@@ -6,8 +6,8 @@ const layout = {
     root        : 'w-full flex flex-wrap min-h-screen',
     homepage    : '/',
     initData : [
-      //{ type: 'api'   , name: 'posts'     , api : 'https://www.techcrunch.com/wp-json/wp/v2/posts' } ,
-      //{ type: 'api'   , name: 'info'     , api :  'https://www.gianlucagiacalone.it/wp-json/wp/v2/posts' } , 
+      { type: 'api'   , name: 'posts'     , api : 'https://www.techcrunch.com/wp-json/wp/v2/posts' } ,
+      { type: 'api'   , name: 'info'     , api :  'https://www.gianlucagiacalone.it/wp-json/wp/v2/posts' } , 
       { type: 'array'   , name: 'services'  , value : [
         {"type":"services",
         "title":"CSS Only",
@@ -98,7 +98,7 @@ const layout = {
                     {
                         css: 'w-full bg-transparent text-grey mx-4 -mt-20 py-6',
                         elements: [
-                            { type: 'component' , component: 'core/services' , options: { data: 'services' , title: 'Features' } },
+                            { type: 'component' , component: 'core/services' , options: { data: 'services' , title: 'Features' , box: 'bg-white rounded py-8 px-4 h-full shadow-lg' } },
                         ],
                         homepage: true
                     },
@@ -118,7 +118,22 @@ const layout = {
                         ],
                         homepage: true
                     },
-                    
+                    {
+                        css: 'w-full shadow my-8',
+                        elements: [
+                            { type: 'component' , component: 'core/prices' , 
+                                options: { 
+                                    data    : 'prices' ,
+                                    style   : "px-8 scale-1",
+                                    title   : '<h1 class="font-light text-2xl">Pricing</h1>' ,
+                                    css     : 'rounded-t border h-64 bg-white hover:shadow-lg text-center text-grey-darkest p-4 pb-8',
+                                    action  : 'bg-white border-l border-r border-b rounded-b flex items-center justify-center',
+                                    button  : 'm-4 py-2 px-4 bg-green-light hover:bg-green text-white rounded',
+                                } 
+                            },
+                        ],
+                        homepage: true
+                    },
                     { 
                         css: 'w-full flex flex-wrap mt-4', 
                         elements : [ 
