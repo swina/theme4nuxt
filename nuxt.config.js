@@ -1,13 +1,5 @@
 import pkg from './package'
-import PurgecssPlugin from 'purgecss-webpack-plugin'
-import glob from 'glob-all'
-import path from 'path'
 
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-z0-9-:\/]+/g) || [];
-  }
-}
 export default {
   mode: 'universal',
   head: {
@@ -28,7 +20,7 @@ export default {
   
   css: [
     '~/assets/css/tailwind.css',
-    //'~/assets/css/theme.css'
+    '~/assets/css/theme.css'
   ],  
   
   
@@ -41,17 +33,9 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/markdownit',
-    'nuxt-purgecss'
+    '@nuxtjs/markdownit'
   ],
   build: {
-    extractCSS: true,
-    postcss: {
-      plugins: {
-        tailwindcss: path.resolve('./tailwind.js')
-      },
-      preset: { autoprefixer: {} }
-    },
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
@@ -62,28 +46,7 @@ export default {
           exclude: /(node_modules)/
         })
       }
-      if (!ctx.isDev){
-        new PurgecssPlugin({
-          
-          // Specify the locations of any files you want to scan for class names.
-          paths: glob.sync([
-            path.join(__dirname, "./pages/**/*.vue"),
-            path.join(__dirname, "./components/**/*.vue"),
-            path.join(__dirname, "./themes/**/*.js"),
-            path.join(__dirname, "./layouts/**/*.vue"),
-          ]),
-      
-          extractors: [
-            {
-              extractor: TailwindExtractor,
-  
-              // Specify the file extensions to include when scanning for
-              // class names.
-              extensions: ["html", "js", "css" , "vue"]
-            }
-          ]
-        })
-      }
+     
     }
   },
 
