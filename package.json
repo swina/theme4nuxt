@@ -44,6 +44,7 @@
     "nuxt-purgecss": "^0.2.1",
     "prettier": "^1.16.4",
     "purgecss-webpack-plugin": "^1.4.0",
-    "tailwindcss": "^0.7.0"
+    "tailwindcss": "^0.7.0",
+    "serialize-javascript": ">=2.1.1"
   }
 }
