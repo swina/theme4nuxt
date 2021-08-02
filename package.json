@@ -19,7 +19,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
-    "vue-lazyload": "^1.2.6"
+    "vue-lazyload": "^1.3.4"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.1.0",
