@@ -18,7 +18,7 @@
     "@nuxtjs/markdownit": "^1.2.4",
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.13.0",
     "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
