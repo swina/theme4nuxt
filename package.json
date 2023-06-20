@@ -19,7 +19,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/markdownit": "^1.2.4",
     "@nuxtjs/pwa": "^3.3.5",
-    "cross-env": "^5.2.0",
+    "cross-env": "^6.0.0",
     "nuxt": "^2.16.3",
     "vue-lazyload": "^1.2.6",
     "@snyk/protect": "latest"
