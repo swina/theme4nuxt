@@ -20,7 +20,7 @@
     "@nuxtjs/markdownit": "^1.2.4",
     "@nuxtjs/pwa": "^3.3.5",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.16.3",
+    "nuxt": "^3.4.3",
     "vue-lazyload": "^1.2.6",
     "@snyk/protect": "latest"
   },
